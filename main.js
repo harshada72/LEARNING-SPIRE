@@ -1,13 +1,13 @@
 //change navbar styles on scroll
 
 window.addEventListener('scroll',() => {
-    document.querySelector('now').classList.toggle
+    document.querySelector('nav').classList.toggle
     ('window-scroll',window.scrollY > 0)
 })
 
 //show hide faq answer
 
-const faqs = document.querySelector('.faq');
+const faqs = document.querySelectorAll('.faq');
 faqs.forEach(faq => {
     faq.addEventListener('click',() => {
       faq.classList.toggle('open');  
@@ -21,3 +21,25 @@ faqs.forEach(faq => {
       }
     })
 })
+
+// show/hide nav menu
+
+const menu = document.querySelector(".nav__menu");
+const menuBtn = document.querySelector("#open-menu-btn");
+const closeBtn = document.querySelector("#close-menu-btn");
+
+menuBtn.addEventListener('click', () => {
+  menu.computedStyleMap.display = "flex";
+  closeBtn.computedStyleMap.display = "inline-block";
+  menuBtn.computedStyleMap.display = "none";
+})
+
+//close nav menu
+
+const closeNav = () => {
+  menu.computedStyleMap.display = "flex";
+  closeBtn.computedStyleMap.display = "none";
+  menuBtn.computedStyleMap.display = "inline-block";
+}
+
+closeBtn.addEventListener('click', closeNav)
