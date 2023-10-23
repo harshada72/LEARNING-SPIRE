@@ -368,6 +368,7 @@ header {
     left: calc(50% -1.5rem);
     top: -1.5rem;
     transform: rotate(45deg);
+    right: 45%;
 }
 
 /*===============Footer=====================*/
